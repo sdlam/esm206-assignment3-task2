@@ -54,14 +54,13 @@ In the code chunk below, write code to create a new data frame called `sw_split_
 
 Make sure to `View()` the resulting data frame (remember: run `View()` in the Console, or click on the object name in the Environment) to ensure it worked as expected.
 
-**Note: You should get a warning about one piece dropped. What happens to the name in Row 49, which contains two dashes? - The name is split at the first dasha and the part of the name after the second dash is lost
+**Note: You should get a warning about one piece dropped. What happens to the name in Row 49, which contains two dashes?
 
 ```{r}
 # Your code here: 
-
 sw_split_name <- starwars %>% 
-  separate(col = name,
-           into = c("name_1","name_2"), 
+  separate(col = name, 
+           into = c("name_1", "name_2"),
            sep = "-")
 ```
 
