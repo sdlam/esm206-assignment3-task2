@@ -200,7 +200,11 @@ In the code chunk below, create a vector (using `c()`, as above) stored as `some
 ```{r}
 # Your code here: 
 
+some_dates <- c(11061972, 02142007, 01301843)
+some_dates_converted <- mdy(some_dates)
+some_dates_converted
 
+class(some_dates_converted)
 ```
 
 #### 3C. Follow me
@@ -244,7 +248,15 @@ Starting from the `lakers` dataset, create a new dataset called `gasol_hookshots
 ```{r}
 # Your code here: 
 
+gasol_hookshots <- lakers %>% 
+  filter(player == "Pau Gasol", type == "hook") %>% #how would you keep all of Pau Gasol's shots and all hook shots?
+  mutate(date_update = ymd(date)) %>% 
+  mutate(month = month(date_update))
 
+gasol_hook_by_month <- gasol_hookshots %>% 
+  count(month)
+  
+gasol_hook_by_month
 ```
 
 ### 4. `dplyr::case_when()`
