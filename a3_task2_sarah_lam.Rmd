@@ -54,12 +54,15 @@ In the code chunk below, write code to create a new data frame called `sw_split_
 
 Make sure to `View()` the resulting data frame (remember: run `View()` in the Console, or click on the object name in the Environment) to ensure it worked as expected.
 
-**Note: You should get a warning about one piece dropped. What happens to the name in Row 49, which contains two dashes?
+**Note: You should get a warning about one piece dropped. What happens to the name in Row 49, which contains two dashes? - The name is split at the first dasha and the part of the name after the second dash is lost
 
 ```{r}
 # Your code here: 
 
-
+sw_split_name <- starwars %>% 
+  separate(col = name,
+           into = c("name_1","name_2"), 
+           sep = "-")
 ```
 
 #### 1B. Follow me
@@ -93,7 +96,12 @@ Make sure to `View()` the resulting data frame (remember: run `View()` in the Co
 ```{r}
 # Your code here:
 
-
+sw_skin_sep <- starwars %>% 
+  separate(col = skin_color, 
+           into = c("skin_1","skin_2"),
+           sep = ",",
+           extra = "merge",
+           remove = FALSE)
 ```
 
 ### 2. `tidyr::unite()`
