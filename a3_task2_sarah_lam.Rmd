@@ -170,7 +170,11 @@ In the code chunk below, use `ymd()` to convert a date that you choose in `YYYY-
 ```{r}
 # Your code here: 
 
+ymd(20050321)
 
+ymd("2005-03-21")
+
+ymd("2005/03/21")
 ```
 
 #### 3B. Follow me
