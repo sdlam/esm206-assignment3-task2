@@ -385,7 +385,7 @@ points_by_month</code></pre>
 <pre class="r"><code># Your code here: 
 
 gasol_hookshots &lt;- lakers %&gt;% 
-  filter(player == &quot;Pau Gasol&quot;, type == &quot;hook&quot;) %&gt;% #how would you keep all of Pau Gasol&#39;s shots and all hook shots?
+  filter(player == &quot;Pau Gasol&quot;, type == &quot;hook&quot;) %&gt;% 
   mutate(date_update = ymd(date)) %&gt;% 
   mutate(month = month(date_update))
 

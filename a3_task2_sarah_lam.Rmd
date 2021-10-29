@@ -249,7 +249,7 @@ Starting from the `lakers` dataset, create a new dataset called `gasol_hookshots
 # Your code here: 
 
 gasol_hookshots <- lakers %>% 
-  filter(player == "Pau Gasol", type == "hook") %>% #how would you keep all of Pau Gasol's shots and all hook shots?
+  filter(player == "Pau Gasol", type == "hook") %>% 
   mutate(date_update = ymd(date)) %>% 
   mutate(month = month(date_update))
 
